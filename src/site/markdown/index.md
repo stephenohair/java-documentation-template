@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/SuperEvenSteven/java-documentation-template.svg?branch=master)](https://travis-ci.org/SuperEvenSteven/java-documentation-template) [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php) [![Documentation](https://img.shields.io/badge/code-documented-brightgreen.svg)](https://superevensteven.github.io/java-documentation-template/index.html)
+
 # java-documentation-template
 Simple template for generated project documentation using maven site, markdown and plantuml.
 
