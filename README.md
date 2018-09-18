@@ -5,6 +5,11 @@ Simple template for generated project documentation using maven site, markdown a
 
 See this template in action [here](https://superevensteven.github.io/java-documentation-template/index.html)
 
+## Optinoal Pre-requisite
+In order to generate PlantUML diagrams you must have a GraphViz installed on your system path, be it linux/mac/windows. The site will still generate but will have missing diagrams.
+
+On linux this is as simple as running this from a terminal: `sudo apt-get install graphviz`
+
 ## Where is the technical documentation?
 All technical documentation can be found in the `src/main/docs` directory. 
 
