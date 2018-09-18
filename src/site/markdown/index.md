@@ -10,7 +10,7 @@ All technical documentation can be found in the `src/main/docs` directory.
 
 It's written in markdown format and includes UML diagrams written using PlantUML syntax. 
 
-See the [PlantUML language reference guide](files/PlantUML_Language_Reference_Guide.pdf) for more info.
+See the [PlantUML language reference guide](http://plantuml.com/PlantUML_Language_Reference_Guide.pdf) for more info.
 
 See the following for additional extensions that can be used to enhance your markdown:
 
