@@ -50,7 +50,7 @@ This will generate a local website under the `target/site/index.html` containing
 
 - README
 - technical documentation
-- linkable UML diagrams
+- linkable UML scalable diagrams (SVG)
 - java code documentation
 - code coverage (line & branch)
 - coding style checks
