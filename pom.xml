@@ -1,0 +1,356 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ohair.stephen</groupId>
+	<artifactId>java-documentation-template</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Java Documentation Template</name>
+	<properties>
+		<maven.site.version>3.7</maven.site.version>
+		<plantuml.plugin.version>1.2</plantuml.plugin.version>
+		<plantuml.version>8059</plantuml.version>
+		<markdown.plugin.version>2.1.0</markdown.plugin.version>
+		<copy.rename.plugin.version>1.0.1</copy.rename.plugin.version>
+		<maven.javadoc.plugin.version>3.0.1</maven.javadoc.plugin.version>
+		<dependency.check.version>3.3.1</dependency.check.version>
+		<project.info.report.version>2.9</project.info.report.version>
+		<umlgraph.doclet.version>5.6.6</umlgraph.doclet.version>
+		<javadoc.version>3.0.0</javadoc.version>
+		<dashboard.version>1.0.0-beta-1</dashboard.version>
+		<taglist.version>2.4</taglist.version>
+		<jxr.version>2.3</jxr.version>
+		<findbugs.version>3.0.5</findbugs.version>
+		<spotbugs.version>3.1.6</spotbugs.version>
+		<jdepend.version>2.0-beta-2</jdepend.version>
+		<pmd.version>3.5</pmd.version>
+		<checkstyle.version>3.0.0</checkstyle.version>
+		<cobertura.version>2.7</cobertura.version>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.coderplus.maven.plugins</groupId>
+				<artifactId>copy-rename-maven-plugin</artifactId>
+				<version>${copy.rename.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>rename-file</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<sourceFile>${project.basedir}/README.md</sourceFile>
+							<destinationFile>${project.basedir}/src/site/markdown/index.md</destinationFile>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>${maven.site.version}</version>
+				<executions>
+					<execution>
+						<id>attach-descriptor</id>
+						<goals>
+							<goal>attach-descriptor</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- generates images from plantuml formated text files -->
+			<plugin>
+				<groupId>com.github.jeluard</groupId>
+				<artifactId>plantuml-maven-plugin</artifactId>
+				<version>${plantuml.plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<format>svg</format>
+							<sourceFiles>
+								<directory>${basedir}/src/main/docs/diagrams</directory>
+								<includes>
+									<include>*.pu</include>
+								</includes>
+							</sourceFiles>
+							<outputDirectory>${project.build.directory}/site/diagrams</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>net.sourceforge.plantuml</groupId>
+						<artifactId>plantuml</artifactId>
+						<version>${plantuml.version}</version>
+					</dependency>
+				</dependencies>
+
+			</plugin>
+
+			<!-- converts markdown to target/html/index.html -->
+			<plugin>
+				<groupId>com.ruleoftech</groupId>
+				<artifactId>markdown-page-generator-plugin</artifactId>
+				<version>${markdown.plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<inputDirectory>${basedir}/src/main/docs</inputDirectory>
+							<outputDirectory>${project.build.directory}/site</outputDirectory>
+							<copyDirectories>**images,**files</copyDirectories>
+							<!-- apply simple styling -->
+							<headerHtmlFile>${project.basedir}/src/main/docs/html/header.html</headerHtmlFile>
+							<pegdownExtensions>TABLES,TOC,EXTANCHORLINKS,EXTANCHORLINKS_WRAP,FENCED_CODE_BLOCKS,AUTOLINKS</pegdownExtensions>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${javadoc.version}</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<doclint>none</doclint>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${checkstyle.version}</version>
+			</plugin>
+		</plugins>
+
+		<!-- Enable this to generate PDF version of site, may prefer to just print 
+			to PDF within browser though. -->
+		<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-pdf-plugin</artifactId> 
+			<executions> <execution> <id>pdf</id> <phase>site</phase> <goals> <goal>pdf</goal> 
+			</goals> <configuration> <outputDirectory>${project.reporting.outputDirectory}</outputDirectory> 
+			<includeReports>false</includeReports> </configuration> </execution> </executions> 
+			</plugin> -->
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											com.ruleoftech
+										</groupId>
+										<artifactId>
+											markdown-page-generator-plugin
+										</artifactId>
+										<versionRange>
+											[2.1.0,)
+										</versionRange>
+										<goals>
+											<goal>generate</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											com.github.jeluard
+										</groupId>
+										<artifactId>
+											plantuml-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.2,)
+										</versionRange>
+										<goals>
+											<goal>generate</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven.javadoc.plugin.version}</version>
+				<configuration>
+					<additionalOptions>
+						-Xdoclint:none
+					</additionalOptions>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<id>uml</id>
+						<reports>
+							<report>javadoc</report>
+						</reports>
+						<configuration>
+							<name>UML &amp; Java
+								Documentation</name>
+							<destDir>uml</destDir>
+							<quiet>true</quiet>
+							<aggregate>true</aggregate>
+							<show>private</show>
+							<doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
+							<docletArtifact>
+								<groupId>org.umlgraph</groupId>
+								<artifactId>umlgraph</artifactId>
+								<version>${umlgraph.doclet.version}</version>
+							</docletArtifact>
+							<additionalparam> -inferrel -inferdep -quiet -hide java.*
+								-hide
+								org.eclipse.* -collpackages java.util.* -postfixpackage
+								-nodefontsize
+								9 -nodefontpackagesize 7 -attributes -types
+								-visibility
+								-operations -constructors
+								-enumerations -enumconstants
+								-views
+							</additionalparam>
+							<useStandardDocletOptions>true</useStandardDocletOptions>
+						</configuration>
+					</reportSet>
+				</reportSets>
+			</plugin>
+
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>${dependency.check.version}</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>aggregate</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+				<configuration>
+					<name>Dependency Check</name>
+					<mavenSettingsProxyId>myproxy</mavenSettingsProxyId>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>${project.info.report.version}</version>
+				<configuration>
+					<!-- Don't lookup dependency locations that are no longer valid https://stackoverflow.com/questions/13316606/maven-error-message-artifact-has-no-file -->
+					<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+					<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>summary</report>
+							<report>dependencies</report>
+							<report>project-team</report>
+							<report>mailing-list</report>
+							<report>cim</report>
+							<report>issue-tracking</report>
+							<report>license</report>
+							<report>scm</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+
+			<!-- this one should go first so that it is available to other plugins 
+				when they run -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>${jxr.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>${cobertura.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${checkstyle.version}</version>
+				<configuration>
+					<configLocation>${project.basedir}/src/main/resources/checkstyle.xml</configLocation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>${pmd.version}</version>
+				<configuration>
+					<targetJdk>${compiler.source.version}</targetJdk>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>${findbugs.version}</version>
+				<configuration>
+					<xmlOutput>true</xmlOutput>
+					<effort>Max</effort>
+					<excludeFilterFile>findbugs-exclude-filter-amsa.xml</excludeFilterFile>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.github.spotbugs</groupId>
+				<artifactId>spotbugs-maven-plugin</artifactId>
+				<version>${spotbugs.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jdepend-maven-plugin</artifactId>
+				<version>${jdepend.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>taglist-maven-plugin</artifactId>
+				<version>${taglist.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>dashboard-maven-plugin</artifactId>
+				<version>${dashboard.version}</version>
+			</plugin>
+		</plugins>
+	</reporting>
+</project>
