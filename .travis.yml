@@ -1,0 +1,11 @@
+language: java
+script: mvn clean site
+
+deploy: # Publish javadoc
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  local-dir: target/site
+  on:
+    branch: master
