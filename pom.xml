@@ -6,7 +6,9 @@
 	<artifactId>java-documentation-template</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Java Documentation Template</name>
+
 	<properties>
+		<junit.version>4.8</junit.version>
 		<maven.site.version>3.7</maven.site.version>
 		<plantuml.plugin.version>1.2</plantuml.plugin.version>
 		<plantuml.version>8059</plantuml.version>
@@ -27,6 +29,15 @@
 		<checkstyle.version>3.0.0</checkstyle.version>
 		<cobertura.version>2.7</cobertura.version>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -263,7 +274,7 @@
 					</reportSet>
 				</reportSets>
 				<configuration>
-					<name>Dependency Check</name>
+					<name>Dependency Vulnerability Check</name>
 					<mavenSettingsProxyId>myproxy</mavenSettingsProxyId>
 				</configuration>
 			</plugin>
@@ -328,7 +339,6 @@
 				<configuration>
 					<xmlOutput>true</xmlOutput>
 					<effort>Max</effort>
-					<excludeFilterFile>findbugs-exclude-filter-amsa.xml</excludeFilterFile>
 				</configuration>
 			</plugin>
 			<plugin>
