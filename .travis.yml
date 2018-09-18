@@ -1,4 +1,9 @@
 language: java
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install graphviz
+
 script: mvn clean site
 
 deploy: # Publish javadoc
