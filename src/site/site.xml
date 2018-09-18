@@ -6,7 +6,10 @@
          http://maven.apache.org/xsd/decoration-1.6.0.xsd">
 	<bannerLeft>
 		<name>${project.name}</name>
-		<href>${project.url}</href>
+		<!-- change this to your own url -->
+		<href>
+			https://superevensteven.github.io/java-documentation-template/index.html
+		</href>
 	</bannerLeft>
 
 	<publishDate position="right" format="MMMM dd, yyyy" />
