@@ -28,6 +28,7 @@
 		<pmd.version>3.5</pmd.version>
 		<checkstyle.version>3.0.0</checkstyle.version>
 		<cobertura.version>2.7</cobertura.version>
+		<surefire.version>2.22.0</surefire.version>
 	</properties>
 
 	<dependencies>
@@ -355,6 +356,11 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>taglist-maven-plugin</artifactId>
 				<version>${taglist.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>${surefire.version}</version>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
