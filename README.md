@@ -1,6 +1,8 @@
 # java-documentation-template
 Simple template for generated project documentation using maven site, markdown and plantuml.
 
+See this template in action [here](https://superevensteven.github.io/java-documentation-template/index.html)
+
 ## Where is the technical documentation?
 All technical documentation can be found in the `src/main/docs` directory. 
 
