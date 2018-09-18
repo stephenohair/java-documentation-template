@@ -45,9 +45,11 @@ This will generate a local website under the `target/site/index.html` containing
 
 - README
 - technical documentation
+- linkable UML diagrams
 - java code documentation
 - code coverage (line & branch)
 - coding style checks
+- bug checks 
 - duplicate code
 - complexity
 - java coding standards
