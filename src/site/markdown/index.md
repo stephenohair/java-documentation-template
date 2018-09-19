@@ -10,8 +10,8 @@ In order to generate PlantUML diagrams you must have GraphViz installed on your 
 
 On linux this is as simple as running this from a terminal: `sudo apt-get install graphviz`
 
-## Where is the technical documentation?
-All technical documentation can be found in the `src/main/docs` directory. 
+## Where is the documentation?
+All documentation can be found in the `src/main/docs` directory. 
 
 It's written in markdown format and includes UML diagrams written using PlantUML syntax. 
 
@@ -52,6 +52,8 @@ This will generate a local website under the `target/site/index.html` containing
 
 - README
 - technical documentation
+- test-plan documentation
+- support documentation
 - linkable UML scalable diagrams (SVG)
 - java code documentation
 - code coverage (line & branch)
