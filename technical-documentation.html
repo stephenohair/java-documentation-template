@@ -8,6 +8,9 @@
 <style>
 body {
 	font-family: Arial !important;
+	max-width: 1000px;
+	margin: auto;
+	background: lightgray;
 }
 
 p {
@@ -34,7 +37,19 @@ tr:nth-child(even) {
 	background-color: #dddddd;
 }
 
-</style><h1><a href="#technical-documentation" id="technical-documentation"></a>Technical Documentation</h1>
+div {
+	background: white;
+	padding: 70px;
+}
+
+@media print {
+	div{
+	   padding	: 0px;
+	}
+
+}
+</style>
+<div><h1><a href="#technical-documentation" id="technical-documentation"></a>Technical Documentation</h1>
 <h2><a href="#example-table-of-contents" id="example-table-of-contents"></a>Example Table of Contents</h2>
 <ul>
 <li><a href="#example-table-of-contents">Example Table of Contents</a></li>
@@ -57,17 +72,17 @@ tr:nth-child(even) {
 <p>Example demonstrating technical documentation generated from markdown.</p>
 <h2><a href="#example-plantuml-diagrams" id="example-plantuml-diagrams"></a>Example PlantUML Diagrams</h2>
 <h3><a href="#sequence-diagram" id="sequence-diagram"></a>Sequence Diagram</h3>
-<p><img src="diagrams/example-sequence-diagram.svg" width="10%"/></p>
+<p><img src="diagrams/example-sequence-diagram.svg" width="30%"/></p>
 <h3><a href="#state-chart-diagram" id="state-chart-diagram"></a>State Chart Diagram</h3>
-<p><img src="diagrams/example-state-chart-diagram.svg" width="20%"/></p>
+<p><img src="diagrams/example-state-chart-diagram.svg" width="40%"/></p>
 <h3><a href="#component-diagram" id="component-diagram"></a>Component Diagram</h3>
-<p><img src="diagrams/example-component-diagram.svg" width="30%"/></p>
+<p><img src="diagrams/example-component-diagram.svg" width="70%"/></p>
 <h3><a href="#activity-diagram" id="activity-diagram"></a>Activity Diagram</h3>
-<p><img src="diagrams/example-activity-diagram.svg" width="10%"/></p>
+<p><img src="diagrams/example-activity-diagram.svg" width="20%"/></p>
 <h3><a href="#class-diagram" id="class-diagram"></a>Class Diagram</h3>
-<p><img src="diagrams/example-class-diagram.svg" width="40%"/></p>
+<p><img src="diagrams/example-class-diagram.svg" width="100%"/></p>
 <h3><a href="#object-diagram" id="object-diagram"></a>Object Diagram</h3>
-<p><img src="diagrams/example-object-diagram.svg" width="40%"/></p>
+<p><img src="diagrams/example-object-diagram.svg" width="100%"/></p>
 <h2><a href="#example-link-to-a-file" id="example-link-to-a-file"></a>Example Link to a File</h2>
 <p><a href="files/PlantUML_Language_Reference_Guide.pdf">PlantUML language reference guide</a></p>
 <h2><a href="#example-image" id="example-image"></a>Example Image</h2>
@@ -84,3 +99,4 @@ tr:nth-child(even) {
 <tr><td align="left"> d      </td><td> 4              </td></tr>
 </tbody>
 </table>
+</div>

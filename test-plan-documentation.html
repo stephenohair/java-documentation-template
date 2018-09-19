@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Test Plan Documentation</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="./css/default.css">
+</head>
+<style>
+body {
+	font-family: Arial !important;
+	max-width: 1000px;
+	margin: auto;
+	background: lightgray;
+}
+
+p {
+	font-family: Arial !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Arial !important;
+}
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+div {
+	background: white;
+	padding: 70px;
+}
+
+@media print {
+	div{
+	   padding	: 0px;
+	}
+
+}
+</style>
+<div><h1><a href="#test-plan-documentation" id="test-plan-documentation"></a>Test Plan Documentation</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#assumptions">Assumptions</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#schedule">Schedule</a>
+<ul>
+<li><a href="#scheduled-dates">Scheduled Dates</a></li>
+</ul>
+</li>
+<li><a href="#risks">Risks</a></li>
+<li><a href="#testing-methodology">Testing Methodology</a></li>
+<li><a href="#test-suite">Test Suite</a>
+<ul>
+<li><a href="#pre-conditions">Pre-conditions</a></li>
+<li><a href="#test-case-1">Test Case 1</a></li>
+<li><a href="#post-conditions">Post-conditions</a></li>
+</ul>
+</li>
+<li><a href="#deliverables">Deliverables</a></li>
+</ul>
+<h2><a href="#introduction" id="introduction"></a>Introduction</h2>
+<p>This is a simple document detailing the fundamental tests performed when testing <strong><insert project here></strong>. Print this document, provide it to the tester and fill in the test results as necessary.</p>
+<h2><a href="#assumptions" id="assumptions"></a>Assumptions</h2>
+<p>Put in any assumptions about the system you're testing.</p>
+<h2><a href="#features" id="features"></a>Features</h2>
+<p>The features tested in this test plan are:</p>
+<ul>
+<li>Ability to perform feature xyz</li>
+</ul>
+<h2><a href="#resources" id="resources"></a>Resources</h2>
+<ul>
+<li>System User</li>
+<li>System Tester</li>
+<li>Developer</li>
+</ul>
+<h2><a href="#schedule" id="schedule"></a>Schedule</h2>
+<p>Description of how testing will be scheduled.</p>
+<h3><a href="#scheduled-dates" id="scheduled-dates"></a>Scheduled Dates</h3>
+<table>
+<thead>
+<tr><th> Item             </th><th> Date </th></tr>
+</thead>
+<tbody>
+<tr><td> Non-prod Testing </td><td>      </td></tr>
+<tr><td> Prod Testing     </td><td>      </td></tr>
+</tbody>
+</table>
+<h2><a href="#risks" id="risks"></a>Risks</h2>
+<p>Any risks associated to performing the tests.</p>
+<h2><a href="#testing-methodology" id="testing-methodology"></a>Testing Methodology</h2>
+<p>A quantitative approach is used, using several defined test cases. Each test case will clearly define a series of steps to be performed and the desired outcome to quantify pass or failure. Each test is performed sequentially and upon completion of each test the actual outcome is recorded for analysis. A test whose actual outcome is the same as its expected outcome is considered a successful test and vice versa.</p>
+<h2><a href="#test-suite" id="test-suite"></a>Test Suite</h2>
+<p>The following diagrams detail the user test cases and their expectations within the application.</p>
+<table>
+<thead>
+<tr><th align="left"> ID              </th><th align="left"> Details </th></tr>
+</thead>
+<tbody>
+<tr><td align="left"> Product Version </td><td align="left">         </td></tr>
+<tr><td align="left"> Conducted by    </td><td align="left">         </td></tr>
+<tr><td align="left"> Date Conducted  </td><td align="left">         </td></tr>
+</tbody>
+</table>
+<h3><a href="#pre-conditions" id="pre-conditions"></a>Pre-conditions</h3>
+<p>Note any pre-conditions here prior to testing.</p>
+<hr />
+<h3><a href="#test-case-1" id="test-case-1"></a>Test Case 1</h3>
+<table>
+<thead>
+<tr><th align="left"> Detail      </th><th align="left"> Value                                                                     </th></tr>
+</thead>
+<tbody>
+<tr><td align="left"> ID          </td><td align="left"> <code>&lt;application_name&gt;-tc-01</code>           </td></tr>
+<tr><td align="left"> Description </td><td align="left"> Test that a user can do xyz using the application </td></tr>
+</tbody>
+</table>
+<h4><a href="#execution-steps" id="execution-steps"></a>Execution Steps</h4>
+<ol>
+<li>First do this...</li>
+<li>Then do that...</li>
+<li>etc...</li>
+</ol>
+<table>
+<thead>
+<tr><th align="left"> Detail           </th><th align="left"> Value                                 </th></tr>
+</thead>
+<tbody>
+<tr><td align="left"> Expected outcome </td><td align="left"> The application should have done xyz  </td></tr>
+<tr><td align="left"> Actual outcome   </td><td align="left"> <br><br><br>                          </td></tr>
+<tr><td align="left"> PASS / FAIL      </td><td align="left">                                       </td></tr>
+</tbody>
+</table>
+<hr />
+<h3><a href="#post-conditions" id="post-conditions"></a>Post-conditions</h3>
+<p>Put any post-conditions related to completing the testing here.</p>
+<h2><a href="#deliverables" id="deliverables"></a>Deliverables</h2>
+<p>The resultant deliverable from having conducted these tests is a system that's capable of performing xyz. The system will also have the correct expected behaviour as confirmed by the user.</p>
+</div>
