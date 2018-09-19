@@ -5,8 +5,8 @@ Simple template for generated project documentation using maven site, markdown a
 
 See this template in action [here](https://superevensteven.github.io/java-documentation-template/index.html)
 
-## Optinoal Pre-requisite
-In order to generate PlantUML diagrams you must have a GraphViz installed on your system path, be it linux/mac/windows. The site will still generate but will have missing diagrams.
+## Optional Pre-requisite
+In order to generate PlantUML diagrams you must have GraphViz installed on your system path, be it linux/mac/windows. The site will still generate without it but will have missing diagrams.
 
 On linux this is as simple as running this from a terminal: `sudo apt-get install graphviz`
 
@@ -37,6 +37,8 @@ ${project.basedir}
                   ├── files (referenced files eg. pdf,doc)
                   ├── html (simple stylesheet used during doco generation)
                   ├── images (referenced images, eg. png/svg)
+                  ├── support-documentation.md (the support document)
+                  ├── test-plan-documentation.md (the test-plan document)
                   └── technical-documentation.md (the main technical document)
 ```
 
@@ -50,7 +52,7 @@ This will generate a local website under the `target/site/index.html` containing
 
 - README
 - technical documentation
-- linkable UML diagrams
+- linkable UML scalable diagrams (SVG)
 - java code documentation
 - code coverage (line & branch)
 - coding style checks
@@ -61,3 +63,7 @@ This will generate a local website under the `target/site/index.html` containing
 - generated class diagrams based on code
 - vulnerability checks on project code including dependent code
 - flattened list of all dependencies used
+
+## Extra
+There's a CI .travis.yml build script for this project that can be used as an example of how you publish your generated site documentation straight to your personal github page on each commit pushed to master. 
+**Note:** you'll need to generate a personal github token for use in travis and in your travis build of the project add a GITHUB environment variable using that token.

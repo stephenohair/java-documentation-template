@@ -37,6 +37,8 @@ ${project.basedir}
                   ├── files (referenced files eg. pdf,doc)
                   ├── html (simple stylesheet used during doco generation)
                   ├── images (referenced images, eg. png/svg)
+                  ├── support-documentation.md (the support document)
+                  ├── test-plan-documentation.md (the test-plan document)
                   └── technical-documentation.md (the main technical document)
 ```
 
