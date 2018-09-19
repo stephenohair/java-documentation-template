@@ -8,22 +8,22 @@ Example demonstrating technical documentation generated from markdown.
 
 ## Example PlantUML Diagrams
 ### Sequence Diagram
-<img src="diagrams/example-sequence-diagram.svg" width="10%"/>
+<img src="diagrams/example-sequence-diagram.svg" width="30%"/>
 
 ### State Chart Diagram
-<img src="diagrams/example-state-chart-diagram.svg" width="20%"/>
+<img src="diagrams/example-state-chart-diagram.svg" width="40%"/>
 
 ### Component Diagram
-<img src="diagrams/example-component-diagram.svg" width="30%"/>
+<img src="diagrams/example-component-diagram.svg" width="70%"/>
 
 ### Activity Diagram
-<img src="diagrams/example-activity-diagram.svg" width="10%"/>
+<img src="diagrams/example-activity-diagram.svg" width="20%"/>
 
 ### Class Diagram
-<img src="diagrams/example-class-diagram.svg" width="40%"/>
+<img src="diagrams/example-class-diagram.svg" width="100%"/>
 
 ### Object Diagram
-<img src="diagrams/example-object-diagram.svg" width="40%"/>
+<img src="diagrams/example-object-diagram.svg" width="100%"/>
 
 ## Example Link to a File
 

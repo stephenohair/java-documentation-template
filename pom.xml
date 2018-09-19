@@ -124,6 +124,7 @@
 							<copyDirectories>**images,**files</copyDirectories>
 							<!-- apply simple styling -->
 							<headerHtmlFile>${project.basedir}/src/main/docs/html/header.html</headerHtmlFile>
+							<footerHtmlFile>${project.basedir}/src/main/docs/html/footer.html</footerHtmlFile>
 							<pegdownExtensions>TABLES,TOC,EXTANCHORLINKS,EXTANCHORLINKS_WRAP,FENCED_CODE_BLOCKS,AUTOLINKS</pegdownExtensions>
 						</configuration>
 					</execution>
