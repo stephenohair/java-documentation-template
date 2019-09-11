@@ -1,4 +1,6 @@
 language: java
+jdk:
+  - opendjdk8
 
 cache:
   directories:
