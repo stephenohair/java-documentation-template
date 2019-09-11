@@ -68,4 +68,5 @@ This will generate a local website under the `target/site/index.html` containing
 
 ## Extra
 There's a CI .travis.yml build script for this project that can be used as an example of how you publish your generated site documentation straight to your personal github page on each commit pushed to master. 
+
 **Note:** you'll need to generate a personal github token for use in travis and in your travis build of the project add a GITHUB environment variable using that token.
