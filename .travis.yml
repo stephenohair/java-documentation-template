@@ -1,6 +1,9 @@
 language: java
+
 jdk:
   - opendjdk8
+
+dist: trusty
 
 cache:
   directories:
