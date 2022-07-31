@@ -3,7 +3,7 @@
 # java-documentation-template
 Simple template for generated project documentation using maven site, markdown and plantuml.
 
-See this template in action [here](https://superevensteven.github.io/java-documentation-template/index.html)
+See this template in action [here](https://stephenohair.github.io/java-documentation-template/index.html)
 
 ## Optional Pre-requisite
 In order to generate PlantUML diagrams you must have GraphViz installed on your system path, be it linux/mac/windows. The site will still generate without it but will have missing diagrams.
